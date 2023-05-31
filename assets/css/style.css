@@ -22,12 +22,6 @@
     padding-right: 10px;
 }
 
-/* .nav-img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-} */
-
 .nav-list{
     padding-right: 15px;
 }
@@ -48,8 +42,20 @@ a {
     color: wheat;
 }
 
-/* .button.is-primary {
-    background-color: black;
-    border-color: transparent;
-    color: #fff;
-} */
+.field {
+    text-align: center;
+}
+
+.control {
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: inherit;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.control-btn {
+    margin-left: 47%;
+}
