@@ -16,7 +16,6 @@
     margin-left: 15px;
     padding-left: 10px;
     padding-right: 10px;
-
 }
 
 .nav-img {
@@ -29,11 +28,8 @@
     padding-right: 15px;
 }
 
-/* .StockPhoto {
-    width: auto;
-    height: 300px;
-} */
-
-body {
+#header-background {
+    width: 100%;
+    height: 100px;
     background-image: url("86BCF47B-1537-42B8-9731-89E500E355D5_1_201_a.jpeg");
 }
