@@ -12,44 +12,48 @@
 
 <body>
     <header id="header-background" class="navbar-menu">
-         <div class="navbar-start">
-            <!-- <img src="./assets/images/glass_of_beer_on_a_transparent_background_by_prussiaart_dcybyhy-fullview.png" alt="beer" class="nav-img"> -->
+        <div class="navbar-start">
             <ul class="nav-items">
                 <img src="" alt="">
-                <a href="">Sports</a>
-                <a href="">Music</a>
-                <a href="">Shows</a>
-                <a href="">Breweries</a>
-                <a href="">Craft Beer Shops</a>
+                <a style="color: white;" href="">Sports</a>
+                <a style="color: white;"href="">Music</a>
+                <a style="color: white;"href="">Shows</a>
+                <a style="color: white;"href="">Breweries</a>
+                <a style="color: white;"href="">Craft Beer Shops</a>
             </ul>
            </div>
     </header>
-    <form id="location-form" >
+    <form id="#location-form">
         <div class="field">
             <label class="label">Tell Us Your Where Abouts!</label>
-                <div class="control">
-                    <input class="input" type="text" id="location" name="location" placeholder="e.g. San Diego">
-                </div>
+            <div class="control">
+              <input class="input" type="text" placeholder="e.g. San Diego">
+            </div>
         </div>
         <div class="field">
-            <label class="label">Tell Us your Intrests</label>
-            <div class="control">
-              <div class="select">
+            <label class="label">Tell us your intrests</label>
+            <p class="control has-icons-left">
+                <span class="select">
                 <select>
-                  <option>Sports</option>
-                  <option>Music</option>
-                  <option>Plays</option>
+                    <option selected>Sports</option>
+                    <option>Music</option>
+                    <option>Plays</option>
                 </select>
-              </div>
-            </div>
-          </div>
-        <div class="field is-grouped">  
-            <div class="control">
-                <button type= "submit" class="button is-primary">Search</button>
-            </div>
-        </div> 
+                </span>
+                <span class="icon is-small is-left">
+                <i class="fas fa-globe"></i>
+          </span>
+            </p>
+      </div>
+    <div class="field">
+      <div class="control">
+        <button class="button is-primary">Search</button>
+     </div>
+    </div>
+    </form>
+    
     <script src="./assets/js/script.js"></script>
-</form>
+
 </body>
 
 </html>

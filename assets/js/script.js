@@ -26,6 +26,7 @@ fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIo
     })
     .then(function(data) {
       console.log(data);
+      
     
       }
     );
