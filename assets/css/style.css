@@ -1,3 +1,7 @@
+* {
+    font-family: 'Didact Gothic';
+}
+
 .navbar-menu {
     background-color: transparent;
     padding: 5px;
@@ -43,3 +47,9 @@ a {
     text-decoration: none;
     color: wheat;
 }
+
+/* .button.is-primary {
+    background-color: black;
+    border-color: transparent;
+    color: #fff;
+} */
