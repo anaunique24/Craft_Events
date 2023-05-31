@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
     <title>Craft Events</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@5.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
-    <header id="header-background">
+
+    <header class="navbar-menu">
         <div class="navbar-start">
             <ul class="nav-items">
                 <img src="" alt="">
@@ -21,7 +22,8 @@
                 <a style="color: white; padding-left: 15px;"href="">Breweries</a>
                 <a style="color: white; padding-left: 15px;"href="">Craft Beer Shops</a>
             </ul>
-           </div>
+               <img id="header-background" src="./assets/images/86BCF47B-1537-42B8-9731-89E500E355D5_1_201_a.jpeg" alt="concert image">
+        </div>
     </header>
     <form id="#location-form">
         <div class="field">
@@ -30,27 +32,52 @@
               <input class="input" type="text" placeholder="e.g. San Diego">
             </div>
         </div>
-        <div class="field">
-            <label class="label">Tell us your intrests</label>
-            <p class="control has-icons-left">
-                <span class="select">
-                <select>
-                    <option selected>Sports</option>
-                    <option>Music</option>
-                    <option>Plays</option>
-                </select>
-                </span>
-                <span class="icon is-small is-left">
-                <i class="fas fa-globe"></i>
-          </span>
-            </p>
       </div>
-    <div class="field">
-      <div class="control">
-        <button class="button is-primary" typle = "submit">Search</button>
+    <div class="control-btn">
+        <button class="button is-primary">Search</button>
      </div>
-    </div>
-    </form>
+
+    <!-- <div class="card">
+        <header class="card-containers">
+          <p class="card-header-title">
+            Component
+          </p>
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+            <br>
+            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">Save</a>
+          <a href="#" class="card-footer-item">Edit</a>
+          <a href="#" class="card-footer-item">Delete</a>
+        </footer>
+      </div> -->
+
+
+    <!-- <div class="row">
+        <div class="col example text for forming the page">
+            <div class="card">
+                <fieldset>
+                    <div class="seatgeek" id="seatgeek">
+                        <h2>Seat Geek</h2>
+                    </div>
+                    <div class="breweries" id="breweries">
+                        <h2>Breweries</h2>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div> -->
     
     <script src="./assets/js/script.js"></script>
 
