@@ -1,5 +1,5 @@
 .navbar-menu {
-    background-color: yellow;
+    background-color: transparent;
     padding: 5px;
     word-spacing: 14px;
 
@@ -27,4 +27,13 @@
 
 .nav-list{
     padding-right: 15px;
+}
+
+/* .StockPhoto {
+    width: auto;
+    height: 300px;
+} */
+
+body {
+    background-image: url("86BCF47B-1537-42B8-9731-89E500E355D5_1_201_a.jpeg");
 }
