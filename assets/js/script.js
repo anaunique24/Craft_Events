@@ -1,4 +1,5 @@
-console.log("test");
+var seatGeekContainer = document.querySelector("seatgeek")
+var breweriesContainer = document.querySelector("breweries")
 
 fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIoxlebtT48GgfdkDkJBIlI")
     .then(function(response) {
@@ -16,6 +17,7 @@ fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIo
     })
     .then(function(data) {
       console.log(data);
+      
     
       }
     );
