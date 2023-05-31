@@ -3,14 +3,26 @@
     margin: 0;
 }
 
+.shows {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    padding-top: 7.5px;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .nav-list{
     padding-right: 15px;
 }
 
 #header-backgroung {
     width: 100%;
-    height: 500px;
-    background-image: url("./assets/image/");
+    height: auto;
 }
 
 .logo {
@@ -24,6 +36,7 @@
 .nav-items {
     font-size: 25px;
     opacity: .5;
+    padding-top: 15px;
     position: absolute;
     top: 8px;
     right: 16px;
