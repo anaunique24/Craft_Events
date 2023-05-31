@@ -1,13 +1,18 @@
 console.log("test");
 var locationForm = document.querySelector('#location-form');
-var locationInput = document.querySelector('#location');
+var locationInput = document.querySelector('#location.input');
 var intrestInput = document.querySelectorAll('#intrests');
+
+var now=dayJS() 
 
 
 var gatherAPI = function(event){
   event.preventDefault();
-  console.log("running")
-   
+  console.log("running");
+  var location= locationInput.value.trim();
+  
+  console.log (now)
+  
 
 }
 
@@ -42,5 +47,5 @@ fetch("https://api.openbrewerydb.org/v1/breweries?by_dist=42.324,-88.9541&per_pa
       }
     );
 
-
+    dayjs().format()
     locationForm.addEventListener('submit', gatherAPI);
