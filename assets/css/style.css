@@ -1,12 +1,39 @@
 .navbar-menu {
-    background-color: yellow;
+    background-color: transparent;
     padding: 5px;
     word-spacing: 14px;
 
 }
 
-.nav-items{
+.shows {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
     font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    padding-top: 7.5px;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.nav-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.nav-list{
+    padding-right: 15px;
+}
+
+/* .StockPhoto {
+    width: auto;
+    height: 300px;
+} */
+
+body {
+    background-image: url("86BCF47B-1537-42B8-9731-89E500E355D5_1_201_a.jpeg");
 }
