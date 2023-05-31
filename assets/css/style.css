@@ -2,13 +2,6 @@
     font-family: 'Didact Gothic';
 }
 
-.navbar-menu {
-    background-color: transparent;
-    padding: 5px;
-    word-spacing: 14px;
-
-}
-
 .shows {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
@@ -33,8 +26,12 @@
 }
 
 .nav-items {
-    padding: 15px;
-    font-size: 22px;
+    padding-left: 15px;
+    font-size: 25px;
+    background: rgba(64, 64, 64);
+    opacity: .4;
+    padding-top: 15px;
+    display: flex;
 }
 
 a {
