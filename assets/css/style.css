@@ -1,3 +1,7 @@
+* {
+    font-family: 'Didact Gothic';
+}
+
 .navbar-menu {
     background-color: transparent;
     padding: 5px;
@@ -18,11 +22,11 @@
     padding-right: 10px;
 }
 
-.nav-img {
+/* .nav-img {
     width: 50px;
     height: 50px;
     object-fit: cover;
-}
+} */
 
 .nav-list{
     padding-right: 15px;
@@ -30,6 +34,22 @@
 
 #header-background {
     width: 100%;
-    height: 100px;
-    background-image: url("86BCF47B-1537-42B8-9731-89E500E355D5_1_201_a.jpeg");
+    height: 500px;
+    background-image: url("/Users/anagrisham/bootcamp/Craft_Events/assets/images/86BCF47B-1537-42B8-9731-89E500E355D5_1_201_a.jpeg");
 }
+
+.nav-items {
+    padding: 15px;
+    font-size: 22px;
+}
+
+a {
+    text-decoration: none;
+    color: wheat;
+}
+
+/* .button.is-primary {
+    background-color: black;
+    border-color: transparent;
+    color: #fff;
+} */
