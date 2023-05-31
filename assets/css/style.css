@@ -3,19 +3,6 @@
     margin: 0;
 }
 
-.shows {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-decoration: none;
-    font-size: 20px;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    padding-top: 7.5px;
-    margin-left: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
 .nav-list{
     padding-right: 15px;
 }
@@ -47,10 +34,12 @@ a {
     text-decoration: none;
     color: wheat;
 }
+
 .field {
     text-align: center;
-    font-size: 20px;
+    padding-top: 35px;
 }
+
 .control {
     box-sizing: border-box;
     clear: both;
@@ -60,6 +49,11 @@ a {
     margin-left: 30%;
     margin-right: 30%;
 }
+
 .control-btn {
     margin-left: 47%;
+}
+
+#label {
+    font-size: 25px;
 }
