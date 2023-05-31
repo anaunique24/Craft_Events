@@ -2,13 +2,6 @@
     font-family: 'Didact Gothic';
 }
 
-.navbar-menu {
-    background-color: transparent;
-    padding: 5px;
-    word-spacing: 14px;
-
-}
-
 .shows {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
@@ -29,12 +22,16 @@
 #header-background {
     width: 100%;
     height: 500px;
-    background-image: url("/Users/anagrisham/bootcamp/Craft_Events/assets/images/86BCF47B-1537-42B8-9731-89E500E355D5_1_201_a.jpeg");
+    background-image: url("./assets/image/");
 }
 
 .nav-items {
-    padding: 15px;
-    font-size: 22px;
+    padding-left: 15px;
+    font-size: 25px;
+    background: rgba(64, 64, 64);
+    opacity: .4;
+    padding-top: 15px;
+    display: flex;
 }
 
 a {
