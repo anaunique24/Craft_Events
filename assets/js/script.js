@@ -7,6 +7,7 @@ var intrestInput = document.querySelectorAll('#intrests');
 var gatherAPI = function(event){
   event.preventDefault();
   console.log("running")
+   
 
 }
 
