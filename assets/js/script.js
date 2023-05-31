@@ -3,15 +3,15 @@ var locationForm = document.querySelector('#location-form');
 var locationInput = document.querySelector('#location.input');
 var intrestInput = document.querySelectorAll('#intrests');
 
-var now=dayJS() 
+var now=dayjs().format("YYYY-MM-DDTHH:mm:ssZ[Z]") 
+console.log(now)
 
 
 var gatherAPI = function(event){
   event.preventDefault();
-  console.log("running");
+  // console.log("running");
   var location= locationInput.value.trim();
-  
-  console.log (now)
+
   
 
 }
