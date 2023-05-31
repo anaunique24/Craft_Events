@@ -1,4 +1,14 @@
 console.log("test");
+var locationForm = document.querySelector('#location-form');
+var locationInput = document.querySelector('#location');
+var intrestInput = document.querySelectorAll('#intrests');
+
+
+var gatherAPI = function(event){
+  event.preventDefault();
+  console.log("running")
+
+}
 
 fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIoxlebtT48GgfdkDkJBIlI")
     .then(function(response) {
@@ -30,3 +40,5 @@ fetch("https://api.openbrewerydb.org/v1/breweries?by_dist=42.324,-88.9541&per_pa
       }
     );
 
+
+    locationForm.addEventListener('submit', gatherAPI);

@@ -13,6 +13,7 @@
 <body>
     <header id="header-background" class="navbar-menu">
          <div class="navbar-start">
+            <!-- <img src="./assets/images/glass_of_beer_on_a_transparent_background_by_prussiaart_dcybyhy-fullview.png" alt="beer" class="nav-img"> -->
             <ul class="nav-items">
                 <img src="" alt="">
                 <a href="">Sports</a>
@@ -21,19 +22,34 @@
                 <a href="">Breweries</a>
                 <a href="">Craft Beer Shops</a>
             </ul>
-        </div>
+           </div>
     </header>
-    <div class="field">
-        <label class="label">Tell Us Your Where Abouts!</label>
+    <form id="location-form" >
+        <div class="field">
+            <label class="label">Tell Us Your Where Abouts!</label>
+                <div class="control">
+                    <input class="input" type="text" id="location" name="location" placeholder="e.g. San Diego">
+                </div>
+        </div>
+        <div class="field">
+            <label class="label">Tell Us your Intrests</label>
             <div class="control">
-              <input class="input" type="text" placeholder="e.g. San Diego">
+              <div class="select">
+                <select>
+                  <option>Sports</option>
+                  <option>Music</option>
+                  <option>Plays</option>
+                </select>
+              </div>
             </div>
-    </div>
-    <div class="control">
-        <button class="button is-primary">Search</button>
-     </div>
-    
+          </div>
+        <div class="field is-grouped">  
+            <div class="control">
+                <button type= "submit" class="button is-primary">Search</button>
+            </div>
+        </div> 
     <script src="./assets/js/script.js"></script>
+</form>
 </body>
 
 </html>
