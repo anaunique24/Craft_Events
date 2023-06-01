@@ -49,13 +49,16 @@ console.log()
     .then(function(data) {
       console.log(data);
       for (var i = 0; i < data.recommendations.length; i++){
-        // var title = recommendations.events.title
+        console.log(i)
+        var title = data.recommendations[i].event.title
+        console.log(title)
         // console.log(i)
         // console.log(title)
       }
     
       }
-    );
+    )
+    .catch(error => console.log(error));
   }
 
   function openBrewRec(){
@@ -75,9 +78,10 @@ console.log()
         var brewCity = data[i].city
         var brewState = data[i].state
         console.log(brewAdd,brewCity,brewState)
+
       }
-      }
-    );
+      })
+      .catch(error => console.log(error));
     }
     
     
