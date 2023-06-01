@@ -10,8 +10,9 @@ var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
 var seatgeek = document.querySelector('.seatgeek');
 var brew = document.querySelector('.brew');
-//var heartBTN = document.querySelector('.heart')
 var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
+
+
 brew.addEventListener("click",function(e){
   if(e.target.matches(".fa-heart")){
     console.log("fav btn");
@@ -55,8 +56,6 @@ function gatherAPI(event){
     
 }
 
-
-//
 function seatGeekRec(event){
  fetch(seatGeekAPI)
     .then(function(response) {
@@ -181,24 +180,5 @@ function seatGeekRec(event){
     }
     
     
-dayjs().format()
-locationForm.addEventListener('submit', gatherAPI)
-// fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIoxlebtT48GgfdkDkJBIlI")
-//     .then(function(response) {
-//       return response.json();  
-//     })
-//     .then(function(data) {
-//       console.log(data);
-    
-//       }
-//     );
-
-// fetch("https://api.openbrewerydb.org/v1/breweries?by_dist=42.324,-88.9541&per_page=3")
-//     .then(function(response) {
-//       return response.json();  
-//     })
-//     .then(function(data) {
-//       console.log(data);
-    
-//       }
-//     );
+dayjs().format();
+locationForm.addEventListener('submit', gatherAPI);
