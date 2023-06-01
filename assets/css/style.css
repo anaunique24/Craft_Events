@@ -58,6 +58,21 @@ a {
     font-size: 25px;
 }
 
-/* .tile.is-ancestor {
-    align-items: center;
-} */
+#card-section {
+    margin-top: 10px;
+}
+
+.breweries {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.seatgeek {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.savedEvents {
+    font-size: 20px;
+    font-weight: bold;
+}
