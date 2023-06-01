@@ -65,16 +65,19 @@ a {
 .brew {
     font-size: 20px;
     font-weight: bold;
+    padding-bottom: 20px;
 }
 
 .seatgeek {
     font-size: 20px;
     font-weight: bold;
+    padding-bottom: 20px;
 }
 
 .savedEvents {
     font-size: 20px;
     font-weight: bold;
+    padding-bottom: 20px;
 }
 
 .btn {
