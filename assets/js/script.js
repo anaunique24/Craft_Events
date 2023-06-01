@@ -26,6 +26,7 @@ brew.addEventListener("click",function(e){
 })
 
 function gatherAPI(event){
+  
   event.preventDefault();
   // console.log("running");
   var location= locationInput.value.trim();
@@ -63,12 +64,12 @@ function seatGeekRec(event){
     })
     .then(function(data) {
       console.log(data);
-      for (var i = 0; i < data.recommendations.length; i++){
+      for (var i = 0; i < 5; i++){
         var title = data.recommendations[i].event.title;
         var date = data.recommendations[i].event.datetime_local;
         var seatGeekURL = data.recommendations[i].event.venue.url;
         var venueName = data.recommendations[i].event.venue.name;
-
+        console.log(date)
         var geekEl = document.createElement('div');
         var geekBody = document.createElement('div');
         var geekList = document.createElement('ul');
@@ -77,20 +78,26 @@ function seatGeekRec(event){
         var geekVenue = document.createElement('li');
         var geekURL = document.createElement('button');
 
+
         geekTitle.textContent = title
-        geekDate.textcontent = dayjs(date).format("MMM-DD-YYYY")
+        geekDate.textContent = date
         console.log(dayjs(date).format("MMM-DD-YYYY"))
         geekVenue.textContent = venueName
-        geekURL.setAttribute ();
+        // geekURL.setAttribute ();
         geekURL.textContent = "Get Tickets"
-
+        geekEl.className = 'card is-child block';
+        geekList.className = 'is-child block'; 
+        // geekEl.setAttribute ('style' , 'box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);')
+        
         
         
         seatGeekBox.appendChild(geekEl);
-
         geekEl.appendChild(geekList);
-        geekList.appendChild(geekTitle);
-        
+        geekList.appendChild(geekTitle); 
+        geekList.appendChild(geekDate); 
+        geekList.appendChild(geekVenue); 
+        geekList.appendChild(geekURL);
+       
 
         
 
