@@ -1,4 +1,3 @@
-console.log("test");
 var locationForm = document.querySelector('#location-form');
 var locationInput = document.querySelector('#location.input');
 var intrestInput = document.querySelectorAll('#intrests');
@@ -8,8 +7,6 @@ var seatGeekAPI;
 var geoAPI;
 var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
-var seatGeekContainer = document.querySelector('#seatgeek');
-var breweriesContainer = document.querySelector('#breweries');
 
 
 
@@ -40,10 +37,8 @@ function gatherAPI(event){
     
 }
 
-
+//
 function seatGeekRec(event){
-console.log(seatGeekAPI, lat, lon);
-console.log()
  fetch(seatGeekAPI)
     .then(function(response) {
       return response.json();  
@@ -51,17 +46,16 @@ console.log()
     .then(function(data) {
       console.log(data);
       for (var i = 0; i < data.recommendations.length; i++){
-        // var title = recommendations.events.title
-        // console.log(i)
-        // console.log(title)
+        var title = data.recommendations[i].event.title;
+        var date = data.recommendations[i].event.datetime_local;
+        var seatGeekURL = data.recommendations[i].event.venue.url;
+        var venueName = data.recommendations[i].event.venue.name;
       }
-    
-      }
-    );
+      })
+    .catch(error => console.log(error));
   }
 
   function openBrewRec(){
-    console.log(openBrewAPI)
 
     fetch(openBrewAPI)
     .then(function(response) {
@@ -70,23 +64,15 @@ console.log()
     .then(function(data) {
       console.log(data);
       for (var i = 0; i < data.length; i++){
-        console.log(i)
         var brewName= data[i].name
-        brewName = document.createElement("h3");
-        brewName.textContent = data[i].name
-        // breweriesContainer.append(brewName)
-
-
-        // console.log(brewName)
+        console.log(brewName)
         var brewAdd = data[i].address_1
         var brewCity = data[i].city
         var brewState = data[i].state
-        var brewURL = data[i].website_url
         console.log(brewAdd,brewCity,brewState)
-        console.log(brewURL);
       }
-      }
-    );
+      })
+      .catch(error => console.log(error));
     }
     
     
