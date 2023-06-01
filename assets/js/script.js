@@ -6,6 +6,9 @@ var lon;
 var seatGeekAPI;
 var geoAPI;
 var now=dayjs().format("YYYY-MM-DD")
+console.log(now) 
+var seatgeek = document.querySelector('.seatgeek');
+var brew = document.querySelector('.brew');
 
 
 
@@ -63,20 +66,29 @@ function seatGeekRec(event){
     .then(function(data) {
       console.log(data);
       for (var i = 0; i < data.length; i++){
-        var brewName= data[i].name
+        var brewContainer = document.createElement('div');
+        // var brewName= data[i].name
+        var brewName = document.createElement('h1');
+        brewName.textContent = data[i].name;
+        brewContainer.appendChild(brewName);
+        console.log(brewName);
+        brew.appendChild(brewContainer);
+
+
         var brewAdd = data[i].address_1
         var brewCity = data[i].city
         var brewState = data[i].state
-
+        var brewURL = data[i].website_url
+        console.log(brewAdd,brewCity,brewState)
+        console.log(brewURL)
       }
       })
-      .catch(error => console.log(error));
+      // .catch(error => console.log(error));
     }
     
     
-    dayjs().format()
-    locationForm.addEventListener('submit', gatherAPI)
-
+dayjs().format()
+locationForm.addEventListener('submit', gatherAPI)
 // fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIoxlebtT48GgfdkDkJBIlI")
 //     .then(function(response) {
 //       return response.json();  
