@@ -10,9 +10,20 @@ var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
 var seatgeek = document.querySelector('.seatgeek');
 var brew = document.querySelector('.brew');
-var heartBTN = document.querySelector('.heart')
-
-
+//var heartBTN = document.querySelector('.heart')
+var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
+brew.addEventListener("click",function(e){
+  if(e.target.matches(".fa-heart")){
+    console.log("fav btn");
+    console.log(e.target.dataset.name, e.target.dataset.url);
+    var brewInfo = {
+      name:e.target.dataset.name,
+      url:e.target.dataset.url
+    }
+    brewListFav.push(brewInfo);
+    localStorage.setItem("brewList", JSON.stringify(brewListFav))
+  }
+})
 
 function gatherAPI(event){
   event.preventDefault();
@@ -101,6 +112,7 @@ function seatGeekRec(event){
     })
     .then(function(data) {
       console.log(data);
+      brew.innerHTML=""
       for (var i = 0; i < data.length; i++){
         var brewContainer = document.createElement('div');
         // var brewName= data[i].name
@@ -111,6 +123,8 @@ function seatGeekRec(event){
         favHeartBtn.setAttribute("class","fa-regular fa-heart")
         favHeartBtn.setAttribute("id","heart")
         favHeartBtn.setAttribute("style","color: #000000;")
+        favHeartBtn.setAttribute("data-name",data[i].name)
+        favHeartBtn.setAttribute("data-url",data[i].website_url)
 
         brewName.textContent = data[i].name;
         brewAdd.textContent = data[i].address_1 + ", " + data[i].city + ", " + data[i].state;
@@ -128,10 +142,9 @@ function seatGeekRec(event){
         
         
 
-
+      // localStorage.setItem('brewName', brewURL);
       
 
-        
         // var brewAdd = data[i].address_1
         // var brewAdd = document.createElement('h1');
         // brewAdd.textContent = data[i].address_1.city.state;
