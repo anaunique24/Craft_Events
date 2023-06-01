@@ -8,6 +8,8 @@ var seatGeekAPI;
 var geoAPI;
 var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
+var seatGeekContainer = document.querySelector('#seatgeek');
+var breweriesContainer = document.querySelector('#breweries');
 
 
 
@@ -70,11 +72,18 @@ console.log()
       for (var i = 0; i < data.length; i++){
         console.log(i)
         var brewName= data[i].name
-        console.log(brewName)
+        brewName = document.createElement("h3");
+        brewName.textContent = data[i].name
+        // breweriesContainer.append(brewName)
+
+
+        // console.log(brewName)
         var brewAdd = data[i].address_1
         var brewCity = data[i].city
         var brewState = data[i].state
+        var brewURL = data[i].website_url
         console.log(brewAdd,brewCity,brewState)
+        console.log(brewURL);
       }
       }
     );
