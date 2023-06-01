@@ -7,8 +7,8 @@ var seatGeekAPI;
 var geoAPI;
 var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
-var seatgeek = document.querySelector('#seatgeek');
-var brew = document.querySelector('#breweries');
+var seatgeek = document.querySelector('.seatgeek');
+var brew = document.querySelector('.brew');
 
 
 
@@ -68,13 +68,11 @@ function seatGeekRec(event){
       for (var i = 0; i < data.length; i++){
         var brewContainer = document.createElement('div');
         // var brewName= data[i].name
-        var brewName = document.createElement("h3")
-        brewName.textContent = data[i].name
-        brewContainer.append(brewName);
+        var brewName = document.createElement('h1');
+        brewName.textContent = data[i].name;
+        brewContainer.appendChild(brewName);
         console.log(brewName);
-
-
-        brew.append(brewContainer);
+        brew.appendChild(brewContainer);
 
 
         var brewAdd = data[i].address_1
