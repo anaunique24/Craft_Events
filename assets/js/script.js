@@ -1,6 +1,7 @@
 var locationForm = document.querySelector('#location-form');
 var locationInput = document.querySelector('#location.input');
 var intrestInput = document.querySelectorAll('#intrests');
+var seatGeekBox = document.querySelector('#seatgeek-box')
 var lat;
 var lon;
 var seatGeekAPI;
@@ -64,6 +65,22 @@ function seatGeekRec(event){
         geekTitle.textContent = title
         geekDate.textcontent = dayjs(date).format("MMM-DD-YYYY")
         console.log(dayjs(date).format("MMM-DD-YYYY"))
+        geekVenue.textContent = geekVenue
+        geekURL.setAttribute ();
+        geekURL.textContent = "Get Tickets"
+
+        
+        
+        seatGeekBox.appendChild(geekEl);
+
+        geekEl.appendChild(geekList);
+        geekList.appendChild(geekTitle, geekDate, geekVenue, geekURL)
+        
+
+        
+
+
+    
 
 
 
