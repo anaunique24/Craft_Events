@@ -10,6 +10,7 @@ var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
 var seatgeek = document.querySelector('.seatgeek');
 var brew = document.querySelector('.brew');
+var heartBTN = document.querySelector('.heart')
 
 
 
@@ -105,21 +106,27 @@ function seatGeekRec(event){
         // var brewName= data[i].name
         var brewName = document.createElement('p');
         var brewAdd = document.createElement('h1');
-        var brewCity = document.createElement('h1');
-        var brewState = document.createElement('h1');
         var brewURL = document.createElement('a');
+        var favHeartBtn = document.createElement('i');
+        favHeartBtn.setAttribute("class","fa-regular fa-heart")
+        favHeartBtn.setAttribute("id","heart")
+        favHeartBtn.setAttribute("style","color: #000000;")
+
         brewName.textContent = data[i].name;
-        brewAdd.textContent = data[i].address_1;
-        brewCity.textContent = data[i].city;
-        brewState.textContent = data[i].state;
-        brewURL.textContent = data[i].websiteURL;
+        brewAdd.textContent = data[i].address_1 + ", " + data[i].city + ", " + data[i].state;
+        brewURL.textContent = data[i].website_url;
         brewContainer.appendChild(brewName);
         brewContainer.appendChild(brewAdd);
-        brewContainer.appendChild(brewCity);
-        brewContainer.appendChild(brewState);
         brewContainer.appendChild(brewURL);
-        console.log(brewName);
+        brewContainer.setAttribute('class', 'pb-5')
+        brewURL.setAttribute('href', data[i].website_url);
+        brewURL.setAttribute('target', '_blank');
+        // console.log(brewName);
+        // console.log(brewURL);
+        brewContainer.appendChild(favHeartBtn);
         brew.appendChild(brewContainer);
+        
+        
 
       // localStorage.setItem('brewName', brewURL);
         var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
