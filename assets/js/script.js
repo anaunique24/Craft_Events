@@ -1,6 +1,7 @@
 var locationForm = document.querySelector('#location-form');
 var locationInput = document.querySelector('#location.input');
 var intrestInput = document.querySelectorAll('#intrests');
+var seatGeekBox = document.querySelector('#seatgeek-box')
 var lat;
 var lon;
 var seatGeekAPI;
@@ -52,6 +53,37 @@ function seatGeekRec(event){
         var date = data.recommendations[i].event.datetime_local;
         var seatGeekURL = data.recommendations[i].event.venue.url;
         var venueName = data.recommendations[i].event.venue.name;
+
+        var geekEl = document.createElement('div');
+        var geekBody = document.createElement('div');
+        var geekList = document.createElement('ul');
+        var geekTitle = document.createElement('li');
+        var geekDate = document.createElement('li');
+        var geekVenue = document.createElement('li');
+        var geekURL = document.createElement('button');
+
+        geekTitle.textContent = title
+        geekDate.textcontent = dayjs(date).format("MMM-DD-YYYY")
+        console.log(dayjs(date).format("MMM-DD-YYYY"))
+        geekVenue.textContent = venueName
+        geekURL.setAttribute ();
+        geekURL.textContent = "Get Tickets"
+
+        
+        
+        seatGeekBox.appendChild(geekEl);
+
+        geekEl.appendChild(geekList);
+        geekList.appendChild(geekTitle);
+        
+
+        
+
+
+    
+
+
+
       }
       })
     .catch(error => console.log(error));
