@@ -69,11 +69,20 @@ function seatGeekRec(event){
         var brewContainer = document.createElement('div');
         // var brewName= data[i].name
         var brewName = document.createElement('p');
-        
-        
-        
+        var brewAdd = document.createElement('h1');
+        var brewCity = document.createElement('h1');
+        var brewState = document.createElement('h1');
+        var brewURL = document.createElement('a');
         brewName.textContent = data[i].name;
+        brewAdd.textContent = data[i].address_1;
+        brewCity.textContent = data[i].city;
+        brewState.textContent = data[i].state;
+        brewURL.textContent = data[i].websiteURL;
         brewContainer.appendChild(brewName);
+        brewContainer.appendChild(brewAdd);
+        brewContainer.appendChild(brewCity);
+        brewContainer.appendChild(brewState);
+        brewContainer.appendChild(brewURL);
         console.log(brewName);
         brew.appendChild(brewContainer);
 
