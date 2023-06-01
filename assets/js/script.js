@@ -188,9 +188,34 @@ function seatGeekRec(event){
         
       }
       })
-      // .catch(error => console.log(error));
+      .catch(error => console.log(error));
     }
     
+
+ 
+dayjs().format()
+locationForm.addEventListener('submit', gatherAPI)
+// fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIoxlebtT48GgfdkDkJBIlI")
+//     .then(function(response) {
+//       return response.json();  
+//     })
+//     .then(function(data) {
+//       console.log(data);
+    
+//       }
+//     );
+
+// fetch("https://api.openbrewerydb.org/v1/breweries?by_dist=42.324,-88.9541&per_page=3")
+//     .then(function(response) {
+//       return response.json();  
+//     })
+//     .then(function(data) {
+//       console.log(data);
+    
+//       }
+//     );
+
     
 dayjs().format();
 locationForm.addEventListener('submit', gatherAPI);
+
