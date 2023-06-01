@@ -49,6 +49,21 @@ function seatGeekRec(event){
         var date = data.recommendations[i].event.datetime_local;
         var seatGeekURL = data.recommendations[i].event.venue.url;
         var venueName = data.recommendations[i].event.venue.name;
+
+        var geekEl = document.createElement('div');
+        var geekBody = document.createElement('div');
+        var geekList = document.createElement('ul');
+        var geekTitle = document.createElement('li');
+        var geekDate = document.createElement('li');
+        var geekVenue = document.createElement('li');
+        var geekURL = document.createElement('button');
+
+        geekTitle.textContent = title
+        geekDate.textcontent = dayjs(date).format("MMM-DD-YYYY")
+        console.log(dayjs(date).format("MMM-DD-YYYY"))
+
+
+
       }
       })
     .catch(error => console.log(error));
