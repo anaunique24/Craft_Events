@@ -121,10 +121,9 @@ function seatGeekRec(event){
         console.log(brewName);
         brew.appendChild(brewContainer);
 
+      // localStorage.setItem('brewName', brewURL);
+        var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
 
-      
-
-        
         // var brewAdd = data[i].address_1
         // var brewAdd = document.createElement('h1');
         // brewAdd.textContent = data[i].address_1.city.state;
