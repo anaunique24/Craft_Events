@@ -4,7 +4,7 @@ var locationInput = document.querySelector('#location.input');
 var intrestInput = document.querySelectorAll('#intrests');
 var lat;
 var lon;
-var seetGeekAPI;
+var seatGeekAPI;
 var geoAPI;
 var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
@@ -26,39 +26,61 @@ function gatherAPI(event){
     lat = data[i].lat;
     lon = data[i].lon;
     console.log(lat,lon)
-    seetGeekAPI = "https://api.seatgeek.com/2/recommendations?client_id=MjUxNTU1NTR8MTY4NTQ3MTQ0OC4wNTE2MTE3&lat="+lat+"&lon="+lon+"&datetime_utc.gt="+now+"&events.id=1162104"
-
+    seatGeekAPI = "https://api.seatgeek.com/2/recommendations?client_id=MjUxNTU1NTR8MTY4NTQ3MTQ0OC4wNTE2MTE3&lat="+lat+"&lon="+lon+"&datetime_utc.gt="+now+"&events.id=1162104"
+    openBrewAPI = "https://api.openbrewerydb.org/v1/breweries?by_dist="+lat+","+lon+"&per_page=5"
     }
-   console.log(seetGeekAPI)
-    
-   
+   console.log(seatGeekAPI)
+   console.log(openBrewAPI)
+    seatGeekRec(seatGeekAPI)
+    openBrewRec(openBrewAPI)
   })
     .catch(error => console.log(error));
     
 }
 
 
-function seetGeekRec(event){
-;  console.log()
-  var location= locationInput.value.trim();
-  var seekGeekAPI="https://api.seatgeek.com/2/recommendations?client_id=MjUxNTU1NTR8MTY4NTQ3MTQ0OC4wNTE2MTE3&city="+location+"&datetime_utc.gt="+now+"&events.id=1162104"
-  console.log(seekGeekAPI)
- fetch("https://api.seatgeek.com/2/recommendations?client_id=MjUxNTU1NTR8MTY4NTQ3MTQ0OC4wNTE2MTE3&city="+location+"&datetime_utc.gt="+now+"&events.id=1162104")
+function seatGeekRec(event){
+console.log(seatGeekAPI, lat, lon);
+console.log()
+ fetch(seatGeekAPI)
     .then(function(response) {
       return response.json();  
     })
     .then(function(data) {
       console.log(data);
-      for (var i = 0; i < data.length; i++){
-        title = recomdations.event.title
-        console.log(title)
+      for (var i = 0; i < data.recommendations.length; i++){
+        // var title = recommendations.events.title
+        // console.log(i)
+        // console.log(title)
       }
     
       }
     );
   }
 
+  function openBrewRec(){
+    console.log(openBrewAPI)
 
+    fetch(openBrewAPI)
+    .then(function(response) {
+      return response.json();  
+    })
+    .then(function(data) {
+      console.log(data);
+      for (var i = 0; i < data.length; i++){
+        console.log(i)
+        var brewName= data[i].name
+        console.log(brewName)
+        var brewAdd = data[i].address_1
+        var brewCity = data[i].city
+        var brewState = data[i].state
+        console.log(brewAdd,brewCity,brewState)
+      }
+      }
+    );
+    }
+    
+    
     dayjs().format()
     locationForm.addEventListener('submit', gatherAPI)
 
