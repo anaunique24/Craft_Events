@@ -61,3 +61,17 @@ a {
 /* .tile.is-ancestor {
     align-items: center;
 } */
+
+.card {
+    display: flex;
+    flex-direction: row;
+    padding: 35px;
+}
+
+.seatgeek {
+    padding-right: 15%;
+}
+
+.cardBrew {
+    padding-left: 10%;
+}
