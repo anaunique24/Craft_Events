@@ -68,19 +68,48 @@ function seatGeekRec(event){
       for (var i = 0; i < data.length; i++){
         var brewContainer = document.createElement('div');
         // var brewName= data[i].name
-        var brewName = document.createElement('h1');
+        var brewName = document.createElement('p');
+        var brewAdd = document.createElement('h1');
+        var brewCity = document.createElement('h1');
+        var brewState = document.createElement('h1');
+        var brewURL = document.createElement('a');
         brewName.textContent = data[i].name;
+        brewAdd.textContent = data[i].address_1;
+        brewCity.textContent = data[i].city;
+        brewState.textContent = data[i].state;
+        brewURL.textContent = data[i].websiteURL;
         brewContainer.appendChild(brewName);
+        brewContainer.appendChild(brewAdd);
+        brewContainer.appendChild(brewCity);
+        brewContainer.appendChild(brewState);
+        brewContainer.appendChild(brewURL);
         console.log(brewName);
         brew.appendChild(brewContainer);
 
 
-        var brewAdd = data[i].address_1
-        var brewCity = data[i].city
-        var brewState = data[i].state
-        var brewURL = data[i].website_url
-        console.log(brewAdd,brewCity,brewState)
-        console.log(brewURL)
+        // var brewAdd = data[i].address_1
+        // var brewAdd = document.createElement('h1');
+        // brewAdd.textContent = data[i].address_1.city.state;
+        // var brewFullAdd = data[i].address_;
+        // console.log(brewFullAdd);
+        // brewContainer.appendChild(brewAdd);
+        // var brewCity = data[i].city;
+        // var brewCity = document.createElement('p');
+        // brewCity.textContent = data[0].city;
+        // brewContainer.appendChild(brewCity);
+        // var brewState = data[i].state
+        // var brewState = document.createElement('p');
+        // brewState.textContent = data[0].state;
+        // brewContainer.appendChild(brewState)
+        // brewContainer.appendChild(brewAdd, brewCity, brewState);
+        
+        // var brewURL = document.createElement('h1');
+        // brewURL.textContent = data[i].website_url;
+        // brewContainer.appendChild(brewURL);
+        // console.log(brewAdd,brewCity,brewState)
+        // console.log(brewURL)
+        // console.log(brewAdd);
+        
       }
       })
       // .catch(error => console.log(error));
