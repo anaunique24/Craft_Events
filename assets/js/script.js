@@ -35,10 +35,13 @@ function gatherAPI(event){
    console.log(openBrewAPI)
     seatGeekRec(seatGeekAPI)
     openBrewRec(openBrewAPI)
+
+    localStorage.setItem('locationInput', location);
   })
     .catch(error => console.log(error));
     
 }
+
 
 //
 function seatGeekRec(event){
@@ -119,6 +122,9 @@ function seatGeekRec(event){
         brew.appendChild(brewContainer);
 
 
+      
+
+        
         // var brewAdd = data[i].address_1
         // var brewAdd = document.createElement('h1');
         // brewAdd.textContent = data[i].address_1.city.state;
