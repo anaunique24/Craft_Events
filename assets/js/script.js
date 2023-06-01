@@ -120,7 +120,6 @@ function seatGeekRec(event){
     .then(function(data) {
       console.log(data);
       brew.innerHTML=""
-      brew.innerHTML="";
       for (var i = 0; i < data.length; i++){
         var brewContainer = document.createElement('div');
         // var brewName= data[i].name
