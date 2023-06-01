@@ -149,10 +149,9 @@ function seatGeekRec(event){
         
         
 
-
+      // localStorage.setItem('brewName', brewURL);
       
 
-        
         // var brewAdd = data[i].address_1
         // var brewAdd = document.createElement('h1');
         // brewAdd.textContent = data[i].address_1.city.state;
@@ -178,10 +177,10 @@ function seatGeekRec(event){
         
       }
       })
-      // .catch(error => console.log(error));
+      .catch(error => console.log(error));
     }
     
-    
+ 
 dayjs().format()
 locationForm.addEventListener('submit', gatherAPI)
 // fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIoxlebtT48GgfdkDkJBIlI")
