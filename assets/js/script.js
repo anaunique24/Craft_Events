@@ -65,7 +65,7 @@ function seatGeekRec(event){
         geekTitle.textContent = title
         geekDate.textcontent = dayjs(date).format("MMM-DD-YYYY")
         console.log(dayjs(date).format("MMM-DD-YYYY"))
-        geekVenue.textContent = geekVenue
+        geekVenue.textContent = venueName
         geekURL.setAttribute ();
         geekURL.textContent = "Get Tickets"
 
@@ -74,7 +74,7 @@ function seatGeekRec(event){
         seatGeekBox.appendChild(geekEl);
 
         geekEl.appendChild(geekList);
-        geekList.appendChild(geekTitle, geekDate, geekVenue, geekURL)
+        geekList.appendChild(geekTitle);
         
 
         
