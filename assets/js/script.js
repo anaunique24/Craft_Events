@@ -38,7 +38,7 @@ function gatherAPI(event){
     
 }
 
-
+//
 function seatGeekRec(event){
 console.log(seatGeekAPI, lat, lon);
 console.log()
@@ -49,15 +49,12 @@ console.log()
     .then(function(data) {
       console.log(data);
       for (var i = 0; i < data.recommendations.length; i++){
-        console.log(i)
-        var title = data.recommendations[i].event.title
-        console.log(title)
-        // console.log(i)
-        // console.log(title)
+        var title = data.recommendations[i].event.title;
+        var date = data.recommendations[i].event.datetime_local;
+        var seatGeekURL = data.recommendations[i].event.venue.url;
+        var venueName = data.recommendations[i].event.venue.name;
       }
-    
-      }
-    )
+      })
     .catch(error => console.log(error));
   }
 
