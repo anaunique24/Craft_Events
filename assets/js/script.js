@@ -64,6 +64,7 @@ function seatGeekRec(event){
     })
     .then(function(data) {
       console.log(data);
+      seatGeekBox.innerHTML="";
       for (var i = 0; i < 5; i++){
         var title = data.recommendations[i].event.title;
         var date = data.recommendations[i].event.datetime_local;
@@ -72,31 +73,42 @@ function seatGeekRec(event){
         console.log(date)
         var geekEl = document.createElement('div');
         var geekBody = document.createElement('div');
-        var geekList = document.createElement('ul');
-        var geekTitle = document.createElement('li');
-        var geekDate = document.createElement('li');
-        var geekVenue = document.createElement('li');
-        var geekURL = document.createElement('button');
+        var geekList = document.createElement('div');
+        var geekTitle = document.createElement('h2');
+        var geekDate = document.createElement('p');
+        var geekVenue = document.createElement('p');
+        var geekURL = document.createElement('a');
+        var favHeartBtn = document.createElement('i');
+        favHeartBtn.setAttribute("class","fa-regular fa-heart")
+        favHeartBtn.setAttribute("id","heart")
+        favHeartBtn.setAttribute("style","color: #000000;")
+        favHeartBtn.setAttribute("data-name",title)
+        favHeartBtn.setAttribute("data-url",seatGeekURL)
+        
+        geekURL.setAttribute('href', seatGeekURL);
+        geekURL.setAttribute('target', '_blank');
 
-
+        geekList.setAttribute('class', 'pb-5')
         geekTitle.textContent = title
-        geekDate.textContent = date
+        geekDate.textContent = dayjs(date).format("MMM-DD-YYYY")
         console.log(dayjs(date).format("MMM-DD-YYYY"))
         geekVenue.textContent = venueName
         // geekURL.setAttribute ();
         geekURL.textContent = "Get Tickets"
-        geekEl.className = 'card is-child block';
-        geekList.className = 'is-child block'; 
+        // geekEl.className = 'is-child';
+        // geekList.className = 'is-child'; 
         // geekEl.setAttribute ('style' , 'box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);')
         
         
         
         seatGeekBox.appendChild(geekEl);
+        seatGeekBox.appendChild(favHeartBtn);
         geekEl.appendChild(geekList);
         geekList.appendChild(geekTitle); 
         geekList.appendChild(geekDate); 
         geekList.appendChild(geekVenue); 
         geekList.appendChild(geekURL);
+        geekList.appendChild(favHeartBtn);
        
 
         
