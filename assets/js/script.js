@@ -14,6 +14,7 @@ var brew = document.querySelector('.brew');
 
 
 function gatherAPI(event){
+  
   event.preventDefault();
   // console.log("running");
   var location= locationInput.value.trim();
@@ -61,6 +62,7 @@ function seatGeekRec(event){
         var geekDate = document.createElement('li');
         var geekVenue = document.createElement('li');
         var geekURL = document.createElement('button');
+
 
         geekTitle.textContent = title
         geekDate.textContent = date
