@@ -29,7 +29,6 @@ brew.addEventListener("click",function(e){
 function gatherAPI(event){
   
   event.preventDefault();
-  // console.log("running");
   var location= locationInput.value.trim();
   geoAPI= 'https://api.openweathermap.org/geo/1.0/direct?q=' + location +',840&limit=1&appid=e7ef61c6ce67516bc22001eacd3518fd'
   fetch(geoAPI)
@@ -94,10 +93,6 @@ function seatGeekRec(event){
         geekVenue.textContent = venueName
         // geekURL.setAttribute ();
         geekURL.textContent = "Get Tickets"
-        // geekEl.className = 'is-child';
-        // geekList.className = 'is-child'; 
-        // geekEl.setAttribute ('style' , 'box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);')
-        
         
         
         seatGeekBox.appendChild(geekEl);
@@ -108,19 +103,11 @@ function seatGeekRec(event){
         geekList.appendChild(geekVenue); 
         geekList.appendChild(geekURL);
         geekList.appendChild(favHeartBtn);
-       
-
-        
-
-
-    
-
-
-
       }
       })
     .catch(error => console.log(error));
   }
+
 
   function openBrewRec(){
 
@@ -133,7 +120,6 @@ function seatGeekRec(event){
       brew.innerHTML=""
       for (var i = 0; i < data.length; i++){
         var brewContainer = document.createElement('div');
-        // var brewName= data[i].name
         var brewName = document.createElement('p');
         var brewAdd = document.createElement('h1');
         var brewURL = document.createElement('a');
@@ -153,38 +139,8 @@ function seatGeekRec(event){
         brewContainer.setAttribute('class', 'pb-5')
         brewURL.setAttribute('href', data[i].website_url);
         brewURL.setAttribute('target', '_blank');
-        // console.log(brewName);
-        // console.log(brewURL);
         brewContainer.appendChild(favHeartBtn);
         brew.appendChild(brewContainer);
-        
-        
-
-      // localStorage.setItem('brewName', brewURL);
-      
-
-        // var brewAdd = data[i].address_1
-        // var brewAdd = document.createElement('h1');
-        // brewAdd.textContent = data[i].address_1.city.state;
-        // var brewFullAdd = data[i].address_;
-        // console.log(brewFullAdd);
-        // brewContainer.appendChild(brewAdd);
-        // var brewCity = data[i].city;
-        // var brewCity = document.createElement('p');
-        // brewCity.textContent = data[0].city;
-        // brewContainer.appendChild(brewCity);
-        // var brewState = data[i].state
-        // var brewState = document.createElement('p');
-        // brewState.textContent = data[0].state;
-        // brewContainer.appendChild(brewState)
-        // brewContainer.appendChild(brewAdd, brewCity, brewState);
-        
-        // var brewURL = document.createElement('h1');
-        // brewURL.textContent = data[i].website_url;
-        // brewContainer.appendChild(brewURL);
-        // console.log(brewAdd,brewCity,brewState)
-        // console.log(brewURL)
-        // console.log(brewAdd);
         
       }
       })
@@ -192,30 +148,5 @@ function seatGeekRec(event){
     }
     
 
- 
 dayjs().format()
 locationForm.addEventListener('submit', gatherAPI)
-// fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=owAxRtDuPwIoxlebtT48GgfdkDkJBIlI")
-//     .then(function(response) {
-//       return response.json();  
-//     })
-//     .then(function(data) {
-//       console.log(data);
-    
-//       }
-//     );
-
-// fetch("https://api.openbrewerydb.org/v1/breweries?by_dist=42.324,-88.9541&per_page=3")
-//     .then(function(response) {
-//       return response.json();  
-//     })
-//     .then(function(data) {
-//       console.log(data);
-    
-//       }
-//     );
-
-    
-dayjs().format();
-locationForm.addEventListener('submit', gatherAPI);
-
