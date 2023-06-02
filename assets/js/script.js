@@ -22,6 +22,7 @@ startup = function(){
 
 function displaySaved(){
   console.log(brewListFav)
+  savedBox.innerHTML=""
   for (var i=0; i < brewListFav.length; i++) {
     
     var savedBrewName = brewListFav[i].name
