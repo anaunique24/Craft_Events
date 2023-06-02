@@ -11,6 +11,8 @@ console.log(now)
 var seatgeek = document.querySelector('.seatgeek');
 var brew = document.querySelector('.brew');
 var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
+var eventListFav = JSON.parse(localStorage.getItem("eventList")) || []
+
 
 
 brew.addEventListener("click",function(e){
@@ -109,6 +111,20 @@ function seatGeekRec(event){
       })
     .catch(error => console.log(error));
   }
+
+  seatGeekBox.addEventListener("click",function(e){
+    if(e.target.matches(".fa-heart")){
+      console.log("fav btn");
+      console.log(e.target.dataset.name, e.target.dataset.url);
+      var eventInfo = {
+        title:e.target.dataset.name,
+        seatGeekURL:e.target.dataset.url
+      }
+      eventListFav.push(eventInfo);
+      console.log(eventListFav);
+      localStorage.setItem("geekList", JSON.stringify(eventListFav))
+    }
+  })
 
 
   function openBrewRec(){
