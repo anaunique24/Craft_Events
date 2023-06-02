@@ -12,27 +12,65 @@ var seatgeek = document.querySelector('.seatgeek');
 var brew = document.querySelector('.brew');
 var favorties = document.querySelector('.savedEvents')
 var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
+console.log(brewListFav)
 var eventListFav = JSON.parse(localStorage.getItem("eventList")) || []
 
 
+startup = function(){
+   displaySaved()
+}
+
+function displaySaved(){
+  console.log(brewListFav)
+  for (var i=0; i < brewListFav.length; i++) {
+    
+    var savedBrewName = brewListFav[i].name
+    console.log(savedBrewName)
+
+  }
+}
 
 brew.addEventListener("click",function(e){
   if(e.target.matches(".fa-heart")){
     e.preventDefault();
     console.log("fav btn");
+    e.target.setAttribute("style","background-color:red")
     console.log(e.target.dataset.name, e.target.dataset.url);
     var brewInfo = {
       name:e.target.dataset.name,
       url:e.target.dataset.url
     }
-    e.preventDefault();
-    brewListFav.push(brewInfo);
-    localStorage.setItem("brewList", JSON.stringify(brewListFav))
-    console.log(JSON.parse(localStorage.getItem(brewInfo)));
-    localStorage.setItem('brewList');
-    localStorage.appendChild(favorties);
+    // if (!brewListFav.includes(brewInfo)){
+    //   brewListFav.push(brewInfo);
+    // }
+    var ifMatched = false;
+    console.log(brewListFav);
+    if (brewListFav.length>0) {
+      
+    
+    for (let i = 0; i < brewListFav.length; i++) {
+      if(brewInfo.name !=  brewListFav[i].name){
+        ifMatched = !(!ifMatched)
+        console.log("new item", brewInfo.name, brewListFav[i].name, ifMatched);
+      } else {
+        ifMatched = !ifMatched
+        console.log ("iold tem", ifMatched)
+      }
+    }
+    if(ifMatched === false){
+      
+      brewListFav.push (brewInfo)
+      localStorage.setItem("brewList", JSON.stringify(brewListFav))
+    }
+  } else {
+      brewListFav.push (brewInfo)
+      localStorage.setItem("brewList", JSON.stringify(brewListFav))
+    }
   }
-})
+});
+
+
+
 
 
 
@@ -67,7 +105,7 @@ function gatherAPI(event){
     .catch(error => console.log(error));
     
 }
-
+//displays events
 function seatGeekRec(event){
  fetch(seatGeekAPI)
     .then(function(response) {
@@ -187,8 +225,6 @@ function seatGeekRec(event){
       .catch(error => console.log(error));
     }
     
-
-
 
 dayjs().format()
 locationForm.addEventListener('submit', gatherAPI)
