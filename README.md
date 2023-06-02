@@ -13,7 +13,9 @@ To use this application:
 ## License
 MIT License
 
-## Screen Recording
+## Screen Shot
+
+![Screenshot 2023-06-02 at 12 09 55 PM](https://github.com/anaunique24/Craft_Events/assets/128003940/35590dfa-3d62-4e00-9e53-a35c0a206dc9)
 
 ## Deployed Link
 https://anaunique24.github.io/Craft_Events/
