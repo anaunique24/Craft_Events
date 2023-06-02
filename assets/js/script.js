@@ -1,7 +1,8 @@
 var locationForm = document.querySelector('#location-form');
 var locationInput = document.querySelector('#location.input');
 var intrestInput = document.querySelectorAll('#intrests');
-var seatGeekBox = document.querySelector('#seatgeek-box')
+var seatGeekBox = document.querySelector('#seatgeek-box');
+var savedBox = document.querySelector('#saved-brews')
 var lat;
 var lon;
 var seatGeekAPI;
@@ -25,7 +26,17 @@ function displaySaved(){
   for (var i=0; i < brewListFav.length; i++) {
     
     var savedBrewName = brewListFav[i].name
-    console.log(savedBrewName)
+    var savedBrewURL = brewListFav[i].url;
+    var savedBrewTotal = savedBrewName +" "+savedBrewURL
+    console.log(savedBrewTotal)
+
+    var savedList = document.createElement('h2')
+    savedList.textContent = savedBrewTotal
+    savedBox.appendChild(savedList)
+
+    
+
+
 
   }
 }
@@ -66,14 +77,9 @@ brew.addEventListener("click",function(e){
       brewListFav.push (brewInfo)
       localStorage.setItem("brewList", JSON.stringify(brewListFav))
     }
+    displaySaved()
   }
 });
-
-
-
-
-
-
 
 
 
@@ -105,6 +111,7 @@ function gatherAPI(event){
     .catch(error => console.log(error));
     
 }
+
 //displays events
 function seatGeekRec(event){
  fetch(seatGeekAPI)
@@ -219,6 +226,7 @@ function seatGeekRec(event){
         brewURL.setAttribute('target', '_blank');
         brewContainer.appendChild(favHeartBtn);
         brew.appendChild(brewContainer);
+
         
       }
       })
