@@ -64,7 +64,7 @@ function seatGeekRec(event){
     })
     .then(function(data) {
       console.log(data);
-      seatGeekBox.innerHTML="";
+      seatgeek.innerHTML="";
       for (var i = 0; i < 5; i++){
         var title = data.recommendations[i].event.title;
         var date = data.recommendations[i].event.datetime_local;
@@ -89,7 +89,7 @@ function seatGeekRec(event){
         favHeartBtn.setAttribute("data-name",title)
         favHeartBtn.setAttribute("data-url",seatGeekURL)
         
-        
+        seatgeek.textContent = "Events"
         imageEl.setAttribute("src", bandImage)
         figureEl.setAttribute('class', 'image is-128x128')
         geekEl.classname ="card main-geek-div"
@@ -144,6 +144,8 @@ function seatGeekRec(event){
     .then(function(data) {
       console.log(data);
       brew.innerHTML=""
+      brew.textContent="Breweries"
+      brew.className = "brew pb-5"
       for (var i = 0; i < data.length; i++){
         var brewContainer = document.createElement('div');
         var brewName = document.createElement('p');
@@ -156,6 +158,7 @@ function seatGeekRec(event){
         favHeartBtn.setAttribute("data-name",data[i].name)
         favHeartBtn.setAttribute("data-url",data[i].website_url)
 
+        // brew.textContent = "Breweries"
         brewName.textContent = data[i].name;
         brewAdd.textContent = data[i].address_1 + ", " + data[i].city + ", " + data[i].state;
         brewURL.textContent = data[i].website_url;
