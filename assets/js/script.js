@@ -87,6 +87,7 @@ function seatGeekRec(event){
         favHeartBtn.setAttribute("data-name",title)
         favHeartBtn.setAttribute("data-url",seatGeekURL)
         
+        
         imageEl.setAttribute("src", bandImage)
         figureEl.setAttribute('class', 'image is-128x128')
         geekEl.classname ="card main-geek-div"
