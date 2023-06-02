@@ -11,6 +11,8 @@ console.log(now)
 var seatgeek = document.querySelector('.seatgeek');
 var brew = document.querySelector('.brew');
 var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
+var eventListFav = JSON.parse(localStorage.getItem("eventList")) || []
+
 
 
 brew.addEventListener("click",function(e){
@@ -86,16 +88,22 @@ function seatGeekRec(event){
         var geekVenue = document.createElement('p');
         var geekURL = document.createElement('a');
         var favHeartBtn = document.createElement('i');
+        var figureEl = document.createElement('figure');
+        var imageEl= document.createElement('img');
+
         favHeartBtn.setAttribute("class","fa-regular fa-heart")
         favHeartBtn.setAttribute("id","heart")
         favHeartBtn.setAttribute("style","color: #000000;")
         favHeartBtn.setAttribute("data-name",title)
         favHeartBtn.setAttribute("data-url",seatGeekURL)
         
+        
+        imageEl.setAttribute("src", bandImage)
+        figureEl.setAttribute('class', 'image is-128x128')
+        geekEl.classname ="card main-geek-div"
         geekURL.setAttribute('href', seatGeekURL);
         geekURL.setAttribute('target', '_blank');
-
-        geekList.setAttribute('class', 'pb-5')
+        geekList.setAttribute('class', 'box pb-5')
         geekTitle.textContent = title
         geekTitle.setAttribute('style', 'font-weight: bold; font-size: 20px')
         geekDate.textContent = dayjs(date).format("MMM-DD-YYYY")
@@ -107,7 +115,9 @@ function seatGeekRec(event){
         
         seatGeekBox.appendChild(geekEl);
         seatGeekBox.appendChild(favHeartBtn);
+        figureEl.appendChild(imageEl);
         geekEl.appendChild(geekList);
+        geekList.appendChild(figureEl)
         geekList.appendChild(geekTitle); 
         geekList.appendChild(geekDate); 
         geekList.appendChild(geekVenue); 
@@ -117,6 +127,20 @@ function seatGeekRec(event){
       })
     .catch(error => console.log(error));
   }
+
+  seatGeekBox.addEventListener("click",function(e){
+    if(e.target.matches(".fa-heart")){
+      console.log("fav btn");
+      console.log(e.target.dataset.name, e.target.dataset.url);
+      var eventInfo = {
+        title:e.target.dataset.name,
+        seatGeekURL:e.target.dataset.url
+      }
+      eventListFav.push(eventInfo);
+      console.log(eventListFav);
+      localStorage.setItem("geekList", JSON.stringify(eventListFav))
+    }
+  })
 
 
   function openBrewRec(){
