@@ -11,6 +11,7 @@ var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
 var seatgeek = document.querySelector('.seatgeek');
 var brew = document.querySelector('.brew');
+var favorties = document.querySelector('.savedEvents')
 var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
 console.log(brewListFav)
 var eventListFav = JSON.parse(localStorage.getItem("eventList")) || []
@@ -42,6 +43,7 @@ function displaySaved(){
 
 brew.addEventListener("click",function(e){
   if(e.target.matches(".fa-heart")){
+    e.preventDefault();
     console.log("fav btn");
     e.target.setAttribute("style","background-color:red")
     console.log(e.target.dataset.name, e.target.dataset.url);
@@ -81,7 +83,6 @@ brew.addEventListener("click",function(e){
 
 
 
-//gets location data and creates the API links
 function gatherAPI(event){
   
   event.preventDefault();
@@ -232,6 +233,6 @@ function seatGeekRec(event){
       .catch(error => console.log(error));
     }
     
-startup()
+
 dayjs().format()
 locationForm.addEventListener('submit', gatherAPI)
