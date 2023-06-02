@@ -10,6 +10,7 @@ var now=dayjs().format("YYYY-MM-DD")
 console.log(now) 
 var seatgeek = document.querySelector('.seatgeek');
 var brew = document.querySelector('.brew');
+var favorties = document.querySelector('.savedEvents')
 var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
 var eventListFav = JSON.parse(localStorage.getItem("eventList")) || []
 
@@ -181,15 +182,7 @@ function seatGeekRec(event){
       .catch(error => console.log(error));
     }
     
-var allFaves = function (e) {
-  fetch(localStorage)
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(data){
-      
-    })
-}
+
 
 
 dayjs().format()
