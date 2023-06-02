@@ -68,7 +68,8 @@ function seatGeekRec(event){
         var date = data.recommendations[i].event.datetime_local;
         var seatGeekURL = data.recommendations[i].event.venue.url;
         var venueName = data.recommendations[i].event.venue.name;
-        console.log(date)
+        var bandImage = data.recommendations[i].event.performers[0].image;
+        console.log(bandImage)
         var geekEl = document.createElement('div');
         var geekBody = document.createElement('div');
         var geekList = document.createElement('div');
@@ -88,6 +89,7 @@ function seatGeekRec(event){
 
         geekList.setAttribute('class', 'pb-5')
         geekTitle.textContent = title
+        geekTitle.setAttribute('style', 'font-weight: bold; font-size: 20px')
         geekDate.textContent = dayjs(date).format("MMM-DD-YYYY")
         console.log(dayjs(date).format("MMM-DD-YYYY"))
         geekVenue.textContent = venueName
