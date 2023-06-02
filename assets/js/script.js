@@ -15,6 +15,7 @@ var brewListFav = JSON.parse(localStorage.getItem("brewList")) || []
 
 brew.addEventListener("click",function(e){
   if(e.target.matches(".fa-heart")){
+    e.preventDefault();
     console.log("fav btn");
     console.log(e.target.dataset.name, e.target.dataset.url);
     var brewInfo = {
@@ -23,8 +24,15 @@ brew.addEventListener("click",function(e){
     }
     brewListFav.push(brewInfo);
     localStorage.setItem("brewList", JSON.stringify(brewListFav))
+    console.log(JSON.parse(localStorage.getItem(brewInfo)));
   }
+  local
 })
+
+
+
+
+
 
 function gatherAPI(event){
   
@@ -149,6 +157,16 @@ function seatGeekRec(event){
       .catch(error => console.log(error));
     }
     
+var allFaves = function (e) {
+  fetch(localStorage)
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(data){
+      
+    })
+}
+
 
 dayjs().format()
 locationForm.addEventListener('submit', gatherAPI)
