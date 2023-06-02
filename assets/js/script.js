@@ -25,11 +25,13 @@ brew.addEventListener("click",function(e){
       name:e.target.dataset.name,
       url:e.target.dataset.url
     }
+    e.preventDefault();
     brewListFav.push(brewInfo);
     localStorage.setItem("brewList", JSON.stringify(brewListFav))
     console.log(JSON.parse(localStorage.getItem(brewInfo)));
+    localStorage.setItem('brewList');
+    localStorage.appendChild(favorties);
   }
-  local
 })
 
 
