@@ -96,12 +96,16 @@ function gatherAPI(event){
 
 //displays events
 function seatGeekRec(event){
- fetch(seatGeekAPI)
+ seatGeekBox.innerHTML ="";
+  fetch(seatGeekAPI)
     .then(function(response) {
       return response.json();  
     })
     .then(function(data) {
-      seatgeek.innerHTML="";
+      var seatGeekRemade= document.createElement('h3');
+      seatGeekBox.appendChild(seatGeekRemade);
+      seatgeek.innerHTML="Events";
+      seatgeek.className = "brew pb-5";
       for (var i = 0; i < 5; i++){
         var title = data.recommendations[i].event.title;
         var date = data.recommendations[i].event.datetime_local;
